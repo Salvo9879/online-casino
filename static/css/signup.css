@@ -1,0 +1,95 @@
+@import url(/static/css/root.css);
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0px 0px 7px 0px grey;
+}
+
+#title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    font-style: normal;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-input {
+    width: 300px;
+    height: 20px;
+
+    padding: 0.3em 0.4em;
+    
+    border: none;
+    border-bottom: 2px black solid;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-style: normal;
+}
+
+.signup-input:focus {
+    border-bottom-color: var(--te-py);
+    outline: none;
+}
+
+.signup-label {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-style: normal;
+    
+}
+
+#signup-submit {
+    padding: 0.8em 1.6em;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    font-style: normal;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 0.5em;
+
+    color: white;
+
+    background-color: var(--te-py);
+}
+
+@media (max-width: 740px) {
+    .row {
+        flex-direction: column;
+    }
+}

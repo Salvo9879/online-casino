@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/signup.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Signup</title>
+</head>
+<body>
+    <form action="/signup" method="post">
+        {{ signup_form.csrf_token() }}
+        <div id="signup-form">
+            <h1 id="title">Create account</h1>
+            <div id="naming-column" class="row">
+                <div class="input-container">
+                    <label for="forename-input" class="signup-label">Forename</label>
+                    <input type="text" name="forename" id="forename-input" class="signup-input" autocomplete="given-name" spellcheck="false" required>
+                </div>
+                <div class="input-container">
+                    <label for="surname-input" class="signup-label">Surname</label>
+                    <input type="text" name="surname" id="surname-input" class="signup-input" autocomplete="family-name" spellcheck="false" required>
+                </div>
+            </div>
+            
+            <div id="birthdate-column" class="row">
+                <div class="input-container">
+                    <label for="birthdate-input" class="signup-label">Birthdate</label>
+                    <input type="date" name="birthdate" id="birthdate-input" class="signup-input" autocomplete="bday" spellcheck="false" required>
+                </div>
+            </div>
+            
+            <div id="Identification-column" class="row">
+                <div class="input-container">
+                    <label for="Email-input" class="signup-label">Email</label>
+                    <input type="email" name="email" id="email-input" class="signup-input" autocomplete="email" spellcheck="false" required>
+                </div>
+    
+                <div class="input-container">
+                    <label for="username-input" class="signup-label">Username</label>
+                    <input type="username" name="username" id="username-input" class="signup-input" autocomplete="username" spellcheck="false" required>
+                </div>
+            </div>
+            
+            <div id="password-column" class="row">
+                <div class="input-container">
+                    <label for="password_alpha-input" class="signup-label">Password</label>
+                    <input type="password" name="password_alpha" id="password_alpha-input" class="signup-input" autocomplete="new-password" spellcheck="false" required>
+                </div>
+                
+                <div class="input-container">
+                    <label for="password_beta-input" class="signup-label">Re-enter password</label>
+                    <input type="password" name="password_beta" id="password_beta-input" class="signup-input" autocomplete="new-password" spellcheck="false" required>
+                </div>
+            </div>
+            <button type="submit" id="signup-submit">Create account</button>
+        </div>
+    </form>
+</body>
+</html>
