@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/credentials.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+</head>
+<body>
+    <form action="/api/51461" method="post">
+        {{ login_form.csrf_token() }}
+        <div id="credentials-form">
+            <h1 id="title">Login</h1>
+            
+            <div id="Identification-column" class="row">
+                <div class="input-container">
+                    <label for="Email-input" class="credentials-label">Email</label>
+                    <input type="email" name="email" id="email-input" class="credentials-input" autocomplete="email" spellcheck="false" required>
+                </div>
+            </div>
+            
+            <div id="password-column" class="row">
+                <div class="input-container">
+                    <label for="password_alpha-input" class="credentials-label">Password</label>
+                    <input type="password" name="password" id="password-input" class="credentials-input" autocomplete="new-password" spellcheck="false" required>
+                </div>
+            </div>
+            <button type="submit" id="credentials-submit">Create account</button>
+
+            <a href="/signup" class="credentials-hyperlink">Don't have an account? Signup here</a>
+
+            {% if errors %}
+                <div id="errors-container">
+                    <h2 id="errors-header">Heads up!</h2>
+                    {% for error in errors %}
+                        <p class="error-msg">{{ errors[error][0] }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </form>
+</body>
+</html>

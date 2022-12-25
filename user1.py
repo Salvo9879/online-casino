@@ -16,4 +16,11 @@ def create_me():
         db.session.add(u)
         db.session.commit()
 
-create_me()
+def delete_me():
+    
+    with app.app_context():
+        u = Users.query.filter_by(id=1).first()
+        db.session.delete(u)
+        db.session.commit()
+
+delete_me()

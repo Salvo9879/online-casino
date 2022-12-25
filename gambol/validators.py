@@ -45,3 +45,15 @@ class AgeLimit(object):
 
         if age < 13:
             raise ValidationError(self.message)
+
+class VerifyUser(object):
+    def __init__(self, message=None) -> None:
+        if not message:
+            message = 'Password or username is incorrect.'
+        self.message = message
+
+    def __call__(self, form, field):
+        user_query = Users.query.filter_by(email=field.data).first()
+
+        if user_query is None or not user_query.verify_password(form.password.data):
+            raise ValidationError(self.message)
